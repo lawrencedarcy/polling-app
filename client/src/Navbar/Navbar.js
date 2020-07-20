@@ -1,5 +1,7 @@
 import React from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
+
 
 function Navbar(props) {
   return (
@@ -7,9 +9,12 @@ function Navbar(props) {
     <div className='flex-container'>
     <img src='https://uploads.guim.co.uk/2020/06/17/open-menu.svg' alt='menu' className='navbar-menu'></img>
 
-    <div>Vote</div>
-    <div>Questions</div>
-    <div>Something</div>
+  
+    <Link to="/votes">Vote </Link>
+    
+    <Link to="/questions">Questions </Link>
+
+    <Link to="/questions">Something </Link>
     <img src='https://uploads.guim.co.uk/2020/06/17/open-menu.svg' alt='menu' className='navbar-menu'></img>
 
     </div>
