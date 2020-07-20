@@ -1,13 +1,14 @@
 const express = require('express');
 
 const router = express.Router();
-const { getTopics, addTopic, deleteTopic, upVote, downVote } = require('./controllers');
+const { getPolls, addPoll, getQuestions, addQuestion, upVote } = require('./controllers');
 
 
+router.get('/polls', getPolls);
+router.post('/polls', addPoll);
+router.get('/questions', getQuestions);
+router.post('/questions', addQuestion);
+router.put('/questions/:id/up', upVote);
+ 
 
-router.get('/topics', getTopics);
-router.post('/topics', addTopic);
-router.delete('/topics/:id', deleteTopic);
-router.put('/topics/:id/up', upVote);
-router.put('/topics/:id/down', downVote);
 module.exports = router;

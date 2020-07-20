@@ -1,13 +1,17 @@
 const mongoose = require('./db');
 const Schema = mongoose.Schema;
 
-const topicSchema = new Schema({
-  
-  title: {type: String, default: 0},
-  timestamp: Number,
-  votes: Number
-  
+const pollSchema = new Schema({
+  question: { type: String, default: 0 },
+  timestamp: Number
 });
 
-const Topic = mongoose.model('Topic', topicSchema);
-module.exports = Topic;
+const questionSchema = new Schema({
+  question: { type: String, default: 0 },
+  timestamp: Number,
+  votes: Number
+});
+
+const Poll = mongoose.model('Poll', pollSchema);
+const Question = mongoose.model('Question', questionSchema);
+module.exports = { Poll, Question };

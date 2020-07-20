@@ -1,70 +1,82 @@
-const Topic = require('./models');
+const {Poll, Question} = require('./models');
 const mongoose = require('./db');
 
 
-const getTopics = async (req, res) => {
+const getPolls = async (req, res) => {
   console.log('get request received!'); // eslint-disable-line
   try {
-    const topics = await Topic.find();   
-    res.json(topics);
+    const polls = await Poll.find();   
+    res.json(polls);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-const addTopic = async (req, res) => {
+const addPoll = async (req, res) => {
   
   console.log(req.body);// eslint-disable-line
-  const topic = new Topic(
+  const poll = new Poll(
     {
-      title: req.body.title,
+      question: req.body.question,
       timestamp: Date.now(),
-      votes: 0
     }
   );
   try {
-    const newTopic = await topic.save();
-    res.status(201).json(newTopic);
+    const newPoll = await poll.save();
+    res.status(201).json(newPoll);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
   
 };
 
-const deleteTopic = async (req, res) => { 
+const getQuestions = async (req, res) => {
+  console.log('get request received!'); // eslint-disable-line
   try {
-    const deleted = await Topic.findOneAndDelete({_id: req.params.id});
-    
-    res.status(200).json({message: 'deleted'}).json(deleted); 
-
+    const questions = await Question.find();   
+    res.json(questions);
   } catch (err) {
-    res.status(500).json({ message: err.message });  }
+    res.status(500).json({ message: err.message });
+  }
 };
+
+const addQuestion = async (req, res) => {
+  
+  console.log(req.body);// eslint-disable-line
+  const question = new Question(
+    {
+      question: req.body.question,
+      timestamp: Date.now(),
+      votes: 0
+    }
+  );
+  try {
+    const newQuestion = await question.save();
+    res.status(201).json(newQuestion);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+  
+};
+
+
 
 const upVote = async (req, res) => {
   try {
-    const upVoted = await Topic.findOneAndUpdate({_id: req.params.id}, { $inc: { votes: 1}});
+    const upVoted = await Question.findOneAndUpdate({_id: req.params.id}, { $inc: { votes: 1}});
     res.status(200).json(upVoted); 
   } catch (err) {
     res.status(500).json({ message: err.message }); 
   }
 };
 
-const downVote = async (req, res) => {
-  try {
-    const downVoted = await Topic.findOneAndUpdate({_id: req.params.id}, { $inc: { votes: -1}});
-    res.status(200).json(downVoted); 
-  } catch (err) {
-    res.status(500).json({ message: err.message }); 
-  }
-};
 
 module.exports = {
-  getTopics,
-  addTopic,
-  deleteTopic,
+  getPolls,
+  addPoll,
+  getQuestions,
+  addQuestion,
   upVote,
-  downVote
 }; 
 
 
