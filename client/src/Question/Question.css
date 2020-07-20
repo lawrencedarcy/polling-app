@@ -1,5 +1,28 @@
 .question-wrapper {
   padding: 2rem;
-  border: 1px solid black;
   margin: .5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: white;
+
+}
+
+.question-user {
+  font-weight: 300;
+  color: grey;
+  font-size: 1rem;
+  padding-top: .3rem;
+}
+
+.question-upvote {
+  font-size: .7rem;
+  padding-top: .3rem;
+  font-weight: 300;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,8 +1,7 @@
 .feed-wrapper{
  
-  
+  height: 100vw;
   width: 60%;
-  border: 1px solid black;
   padding-top: 5rem;
   margin: auto;
 }
