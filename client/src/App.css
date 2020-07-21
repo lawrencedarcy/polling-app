@@ -1,3 +1,7 @@
 .container {
   background-color: #ebebebd2;
 }
+
+.content {
+  padding-top: 5rem;
+}

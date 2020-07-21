@@ -3,21 +3,22 @@ import { Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
 import Feed from './Feed/Feed';
 import Votes from './Votes/Votes';
-
+import Poll from './Poll/Poll';
 
 import './App.css';
 
 function App() {
   return (
-    <div className='pad-top container'>
+    <div className='container'>
       <Navbar />
       
-
+    <div className='content'>
       <Switch>
-      <Route path="/" component={Navbar} exact />
-                <Route path="/votes" component={Votes}  exact />
+      <Route path="/" component={Votes} exact />
+                <Route path="/votes" component={Poll}  exact />
                 <Route path="/questions" component={Feed}  exact />
                 </Switch>
+                </div>
     </div>
   );
 }

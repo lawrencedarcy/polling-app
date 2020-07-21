@@ -1,0 +1,16 @@
+.poll-wrapper {
+  border: 1px solid grey;
+  height: 300px;
+  width: 60%;
+  margin: auto;
+ background-color: white;
+ padding: 2rem;
+}
+
+.poll-question {
+padding: .5rem 0;
+}
+
+.poll-answer {
+  padding: .5rem 0;
+}
