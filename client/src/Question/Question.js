@@ -1,14 +1,15 @@
 import React from 'react';
 import './Question.css';
 
-function Question(props) {
+function Question({question}) {
   return (
     
     <div className='question-wrapper'>
+      
       <div className='flex'>
-      Should we bring back the death penalty?
+      {question.question}
    
-    <div className='question-user'>Submitted by User0292021</div>
+    <div className='question-user'>Submitted by {question.username}</div>
     <div className='question-upvote'>upvote</div> 
     </div>
      </div>

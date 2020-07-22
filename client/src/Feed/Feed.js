@@ -1,16 +1,14 @@
 import React from 'react';
 import './Feed.css';
-import Question from '../Question/Question'
+import Question from '../Question/Question';
+import QuestionForm from '../Question/QuestionForm/QuestionForm';
 
-function Feed(props) {
+function Feed({ questions, addQuestion }) {
   return (
     <div className='feed-wrapper'>
-      <Question />
-      <Question />
-      <Question />
-      <Question />
-      <Question />
-      <Question />
+      <QuestionForm addQuestion={addQuestion}/>
+      {questions &&
+        questions.map(question => <Question question={question} key={question._id}/>)}
     </div>
   );
 }

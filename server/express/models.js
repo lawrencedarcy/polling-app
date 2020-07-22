@@ -7,9 +7,10 @@ const pollSchema = new Schema({
 });
 
 const questionSchema = new Schema({
-  question: { type: String, default: 0 },
+  question: { type: String},
+  username: String,
   timestamp: Number,
-  votes: Number
+  votes:{ type: Number, default: 0 }
 });
 
 const Poll = mongoose.model('Poll', pollSchema);

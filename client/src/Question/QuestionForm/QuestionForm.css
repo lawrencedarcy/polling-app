@@ -1,0 +1,27 @@
+.questionform-wrapper {
+  display: flex;
+  background-color: white;
+  padding: 1rem;
+  width: 90%;
+  margin: .5rem;
+  
+  font-size: 1.2rem;
+}
+
+.questionform-label {
+  padding: .5rem;
+}
+
+.questionform-btn {
+  padding: .5rem;
+  background-color: rgb(92, 155, 92);
+  border: none;
+  margin: .3rem;
+  color: white;
+  cursor: pointer;
+}
+.questionform-input {
+  outline: none;
+  padding: .3rem;
+  border: .3px solid grey;
+}
