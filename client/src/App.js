@@ -24,13 +24,17 @@ function App() {
       });
   }, []);
 
-  const addQuestion = (question) => {
+  const addPoll = (question) => {
     console.log('adding', question)
     setQuestions([...questions, question ]);
 
     axios.post('http://localhost:3001/questions', {
       question: question.question,
-      username: question.username
+      username: question.username,
+      answer1: question.answer1,
+      answer2: question.answer2,
+      answer3: question.answer3,
+      answer4: question.answer4
     })
     .then(function (response) {
       console.log(response);
@@ -39,6 +43,7 @@ function App() {
       console.log(error);
     });
   }
+
 
   return (
     <div className='container'>
@@ -51,7 +56,7 @@ function App() {
           <Route
             exact
             path='/questions'
-            render={props => <Feed {...props} questions={questions} addQuestion={addQuestion}/>}
+            render={props => <Feed {...props} questions={questions} addPoll={addPoll}/>}
           />
         </Switch>
       </div>

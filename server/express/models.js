@@ -10,7 +10,10 @@ const questionSchema = new Schema({
   question: { type: String},
   username: String,
   timestamp: Number,
-  votes:{ type: Number, default: 0 }
+  answer1: String,
+  answer2: String,
+  answer3: String,
+  answer4: String,
 });
 
 const Poll = mongoose.model('Poll', pollSchema);

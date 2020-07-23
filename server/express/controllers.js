@@ -48,7 +48,10 @@ const addQuestion = async (req, res) => {
       question: req.body.question,
       username: req.body.username,
       timestamp: Date.now(),
-      votes: 0
+      answer1: req.body.answer1,
+      answer2: req.body.answer2,
+      answer3: req.body.answer3,
+      answer4: req.body.answer4
     }
   );
   try {

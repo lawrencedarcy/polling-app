@@ -1,14 +1,15 @@
 import React from 'react';
 import './Feed.css';
-import Question from '../Question/Question';
-import QuestionForm from '../Question/QuestionForm/QuestionForm';
+import Poll from '../Poll/Poll';
+import CreatePoll from '../CreatePoll/CreatePoll';
 
-function Feed({ questions, addQuestion }) {
+function Feed({ questions, addPoll }) {
+  console.log(questions);
   return (
     <div className='feed-wrapper'>
-      <QuestionForm addQuestion={addQuestion}/>
-      {questions &&
-        questions.map(question => <Question question={question} key={question._id}/>)}
+      <CreatePoll addPoll={addPoll}/> 
+   {questions &&
+        questions.map(question => <Poll question={question} key={question._id}/>)}
     </div>
   );
 }
