@@ -12,9 +12,9 @@ function Navbar(props) {
           className='navbar-menu'
         ></img>
 
-        <Link to='/votes'>Vote </Link>
+        <Link to='/'>Feed</Link>
 
-        <Link to='/questions'>Questions </Link>
+        <Link to='/create'>Create poll</Link>
 
         <Link to='/questions'>Something </Link>
         <img

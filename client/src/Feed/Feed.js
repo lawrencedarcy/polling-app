@@ -7,7 +7,7 @@ function Feed({ questions, addPoll }) {
   console.log(questions);
   return (
     <div className='feed-wrapper'>
-      <CreatePoll addPoll={addPoll}/> 
+      
    {questions &&
         questions.map(question => <Poll question={question} key={question._id}/>)}
     </div>

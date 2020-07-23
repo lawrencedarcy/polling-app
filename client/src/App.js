@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
 import Feed from './Feed/Feed';
+import CreatePoll from './CreatePoll/CreatePoll';
 import Votes from './Votes/Votes';
 import Poll from './Poll/Poll';
 
@@ -51,11 +52,11 @@ function App() {
 
       <div className='content'>
         <Switch>
-          <Route exact path='/' component={Votes} />
-          <Route exact path='/votes' component={Poll} />
+         
+          <Route exact path='/create' component={CreatePoll} />
           <Route
             exact
-            path='/questions'
+            path='/'
             render={props => <Feed {...props} questions={questions} addPoll={addPoll}/>}
           />
         </Switch>
