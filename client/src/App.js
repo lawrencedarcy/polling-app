@@ -35,7 +35,8 @@ function App() {
       answer1: question.answer1,
       answer2: question.answer2,
       answer3: question.answer3,
-      answer4: question.answer4
+      answer4: question.answer4,
+      isPublic: question.isPublic
     })
     .then(function (response) {
       console.log(response);
@@ -53,7 +54,7 @@ function App() {
       <div className='content'>
         <Switch>
          
-          <Route exact path='/create' component={CreatePoll} />
+          <Route exact path='/create' render={props => <CreatePoll {...props} addPoll={addPoll} />} />
           <Route
             exact
             path='/'

@@ -3,7 +3,7 @@ import './Feed.css';
 import Poll from '../Poll/Poll';
 import CreatePoll from '../CreatePoll/CreatePoll';
 
-function Feed({ questions, addPoll }) {
+function Feed({ questions}) {
   console.log(questions);
   return (
     <div className='feed-wrapper'>

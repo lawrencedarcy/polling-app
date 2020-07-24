@@ -14,6 +14,7 @@ const questionSchema = new Schema({
   answer2: String,
   answer3: String,
   answer4: String,
+  isPublic: Boolean
 });
 
 const Poll = mongoose.model('Poll', pollSchema);
