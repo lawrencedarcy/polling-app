@@ -32,10 +32,10 @@ function App() {
     axios.post('http://localhost:3001/questions', {
       question: question.question,
       username: question.username,
-      answer1: question.answer1,
-      answer2: question.answer2,
-      answer3: question.answer3,
-      answer4: question.answer4,
+      answer1: {value: question.answer1, votes: []},
+      answer2: {value: question.answer2, votes: []},
+      answer3: {value: question.answer3, votes: []},
+      answer4: {value: question.answer4, votes: []},
       isPublic: question.isPublic
     })
     .then(function (response) {
@@ -46,6 +46,9 @@ function App() {
     });
   }
 
+const vote = () => {
+
+}
 
   return (
     <div className='container'>
