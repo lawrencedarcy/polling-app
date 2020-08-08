@@ -10,10 +10,10 @@ const questionSchema = new Schema({
   question: { type: String},
   username: String,
   timestamp: Number,
-  answer1: String,
-  answer2: String,
-  answer3: String,
-  answer4: String,
+  answer1: {value: String, votes: {type: Array, default: []}},
+  answer2: {value: String, votes: {type: Array, default: []}},
+  answer3: {value: String, votes: {type: Array, default: []}},
+  answer4: {value: String, votes: {type: Array, default: []}},
   isPublic: Boolean
 });
 
