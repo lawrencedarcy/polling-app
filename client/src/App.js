@@ -25,30 +25,29 @@ function App() {
       });
   }, []);
 
-  const addPoll = (question) => {
-    console.log('adding', question)
-    setQuestions([...questions, question ]);
+  const addPoll = question => {
+    console.log('adding', question);
+    setQuestions([...questions, question]);
 
-    axios.post('http://localhost:3001/questions', {
-      question: question.question,
-      username: question.username,
-      answer1: {value: question.answer1, votes: []},
-      answer2: {value: question.answer2, votes: []},
-      answer3: {value: question.answer3, votes: []},
-      answer4: {value: question.answer4, votes: []},
-      isPublic: question.isPublic
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
+    axios
+      .post('http://localhost:3001/questions', {
+        question: question.question,
+        username: question.username,
+        answer1: { value: question.answer1, votes: [] },
+        answer2: { value: question.answer2, votes: [] },
+        answer3: { value: question.answer3, votes: [] },
+        answer4: { value: question.answer4, votes: [] },
+        isPublic: question.isPublic
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
 
-const vote = () => {
-
-}
+  const vote = () => {};
 
   return (
     <div className='container'>
@@ -56,15 +55,21 @@ const vote = () => {
 
       <div className='content'>
         <Switch>
-         
-          <Route exact path='/create' render={props => <CreatePoll {...props} addPoll={addPoll} />} />
+          <Route
+            exact
+            path='/create'
+            render={props => <CreatePoll {...props} addPoll={addPoll} />}
+          />
           <Route
             exact
             path='/'
-            render={props => <Feed {...props} questions={questions} addPoll={addPoll}/>}
+            render={props => (
+              <Feed {...props} questions={questions}  />
+            )}
           />
         </Switch>
       </div>
+
     </div>
   );
 }

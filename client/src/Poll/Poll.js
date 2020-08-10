@@ -4,7 +4,8 @@ import './Poll.css';
 function Poll({question}) {
   console.log('quesiton', question)
   return (
-    question ? 
+    
+   
     <div className='poll-wrapper'>
     <div className='poll-title'>Poll </div>
     <div className='poll-inner-wrapper'>
@@ -16,7 +17,8 @@ function Poll({question}) {
    <div className='question-user'>Submitted by {question.username}</div> 
   </div>
     </div>
-    : null
+   
+   
   );
 }
 

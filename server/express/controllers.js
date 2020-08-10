@@ -48,10 +48,10 @@ const addQuestion = async (req, res) => {
       question: req.body.question,
       username: req.body.username,
       timestamp: Date.now(),
-      answer1: {value: req.body.answer1.value, votes: []},
-      answer2: {value: req.body.answer2.value, votes: []},
-      answer3: {value: req.body.answer3.value, votes: []},
-      answer4: {value: req.body.answer4.value, votes: []},
+      answer1: req.body.answer1,
+      answer2: req.body.answer2,
+      answer3: req.body.answer3,
+      answer4: req.body.answer4,
       isPublic: req.body.isPublic
     }
   );
