@@ -3,13 +3,14 @@ import './CreatePoll.css';
 
 function CreatePoll({ addPoll }) {
   const [checked, setChecked] = useState(true);
+  const [questionNo, setQuestionNo] = useState(2);
 
   const initialFormState = {
     question: '',
     username: '',
     answer1: '',
     answer2: '',
-    answer3: '', 
+    answer3: '',
     answer4: '',
     isPublic: true
   };
@@ -51,14 +52,19 @@ function CreatePoll({ addPoll }) {
           value={question.question}
           onChange={handleInputChange}
         />
-        <label className='questionform-label'>Answer one:</label>
-        <input
-          className='questionform-input'
-          type='text'
-          name='answer1'
-          value={question.answer1}
-          onChange={handleInputChange}
-        />
+
+        
+            <label className='questionform-label'>Answer one:</label>
+            <input
+              className='questionform-input'
+              type='text'
+              name='answer1'
+              value={question.answer1}
+              onChange={handleInputChange}
+            />
+        
+        
+
         <label className='questionform-label'>Answer two:</label>
         <input
           className='questionform-input'
@@ -67,6 +73,9 @@ function CreatePoll({ addPoll }) {
           value={question.answer2}
           onChange={handleInputChange}
         />
+
+{questionNo >= 3 && (
+          <div>
         <label className='questionform-label'>Answer three:</label>
         <input
           className='questionform-input'
@@ -75,6 +84,10 @@ function CreatePoll({ addPoll }) {
           value={question.answer3}
           onChange={handleInputChange}
         />
+  </div>)}
+
+  {questionNo >= 4 && (
+    <div>
         <label className='questionform-label'>Answer four:</label>
         <input
           className='questionform-input'
@@ -83,6 +96,8 @@ function CreatePoll({ addPoll }) {
           value={question.answer4}
           onChange={handleInputChange}
         />
+        </div>)}
+        <button onClick={() => {setQuestionNo(questionNo +1); console.log('question no', questionNo)}}>Add question</button>
         <label className='questionform-label'>Make public?</label>
         <input
           type='checkbox'
