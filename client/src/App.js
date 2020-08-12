@@ -17,7 +17,7 @@ function App() {
     axios
       .get('http://localhost:3001/questions')
       .then(function(response) {
-        console.log(response.data);
+        console.log('res questions list', response.data);
         setQuestions(response.data);
       })
       .catch(function(error) {
