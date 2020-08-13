@@ -5,6 +5,7 @@ function CreatePoll({ addPoll }) {
   const [checked, setChecked] = useState(true);
   const [questionNo, setQuestionNo] = useState(2);
 
+  
   const initialFormState = {
     question: '',
     username: '',
@@ -53,7 +54,7 @@ function CreatePoll({ addPoll }) {
           onChange={handleInputChange}
         />
 
-        
+        <div>
             <label className='questionform-label'>Answer one:</label>
             <input
               className='questionform-input'
@@ -63,8 +64,9 @@ function CreatePoll({ addPoll }) {
               onChange={handleInputChange}
             />
         
-        
+        </div>
 
+<div>
         <label className='questionform-label'>Answer two:</label>
         <input
           className='questionform-input'
@@ -73,9 +75,9 @@ function CreatePoll({ addPoll }) {
           value={question.answer2}
           onChange={handleInputChange}
         />
-
+</div>
 {questionNo >= 3 && (
-          <div>
+          <div >
         <label className='questionform-label'>Answer three:</label>
         <input
           className='questionform-input'
